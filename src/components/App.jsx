@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import PantallaInicio from './PantallaInicio';
+import React, { useState } from 'react';
+import PantallaInicio from './Inicio'; // Importar correctamente
 import DesafioMatematico from './DesafioMatematico';
 import PantallaResultado from './PantallaResultado';
 
@@ -12,6 +12,7 @@ const App = () => {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const startGame = () => {
+    console.log("Juego iniciado"); // Verificar si se llama a esta función
     setGameStarted(true);
     generateChallenge();
     setPoints(0);
@@ -24,7 +25,7 @@ const App = () => {
     let num2 = Math.floor(Math.random() * 10) + 1;
 
     if (!isAddition && num1 < num2) {
-      [num1, num2] = [num2, num1]; // Con esto nos aseguramos que la resta no sea negativa
+      [num1, num2] = [num2, num1];
     }
 
     setCurrentChallenge({
@@ -59,7 +60,7 @@ const App = () => {
   return (
     <div>
       {!gameStarted ? (
-        <PantallaInicio startGame={startGame} />
+        <PantallaInicio startGame={startGame} /> // Pasar la función correctamente
       ) : showResult ? (
         <PantallaResultado isCorrect={isCorrect} nextRound={nextRound} />
       ) : (
