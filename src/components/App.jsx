@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PantallaInicio from './Inicio'; // Importar correctamente
 import DesafioMatematico from './DesafioMatematico';
 import PantallaResultado from './PantallaResultado';
