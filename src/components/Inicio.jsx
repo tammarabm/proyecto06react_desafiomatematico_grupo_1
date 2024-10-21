@@ -1,8 +1,7 @@
-import React from "react"
-import { Button } from 'react-bootstrap'
+import React from "react";
+import { Button } from 'react-bootstrap';
 
-
-function Inicio() {
+function PantallaInicio({ startGame }) {
     return (
         <>
             <div className="container text-center text-bg-success p-3">
@@ -16,10 +15,11 @@ function Inicio() {
             </span>
             <div className="container text-center mt-md-5">
                 <h5>BUENAS SUERTE EN ESTE PEQUEÑO EXAMEN!</h5>
-                <Button variant="dark"> EMPEZAR! </Button>
+                <Button variant="dark" onClick={() => startGame()}> EMPEZAR! </Button> {/* Cambié a una función flecha */}
             </div>
         </>
-    )
+    );
 }
 
-export default Inicio
+export default PantallaInicio;
+
