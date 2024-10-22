@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import PantallaInicio from './Inicio'; // Importar correctamente
-import DesafioMatematico from './DesafioMatematico';
-import PantallaResultado from './PantallaResultado';
-import PantallaFinal from './PantallaFinal';
+import PantallaInicio from './components/Inicio'; // Importar correctamente
+import DesafioMatematico from './components/DesafioMatematico';
+import PantallaResultado from './components/PantallaResultado';
+import PantallaFinal from './components/PantallaFinal';
 
 const App = () => {
   const [gameStarted, setGameStarted] = useState(false);
