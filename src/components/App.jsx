@@ -55,7 +55,7 @@ const App = () => {
   };
 
   const nextRound = () => {
-    if (round < 6) {
+    if (round < 5) {
       setRound(round + 1);
       generateChallenge();
       setShowResult(false);
