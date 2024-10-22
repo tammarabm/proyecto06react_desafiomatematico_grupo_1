@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PantallaInicio from './Inicio'; // Importar correctamente
 import DesafioMatematico from './DesafioMatematico';
 import PantallaResultado from './PantallaResultado';
+import PantallaFinal from './PantallaFinal';
 
 const App = () => {
   const [gameStarted, setGameStarted] = useState(false);
@@ -10,6 +11,7 @@ const App = () => {
   const [round, setRound] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [juegoTerminado, setJuegoTerminado] = useState(false); 
 
   const startGame = () => {
     console.log("Juego iniciado"); // Verificar si se llama a esta función
@@ -17,6 +19,7 @@ const App = () => {
     generateChallenge();
     setPoints(0);
     setRound(1);
+    setJuegoTerminado(false);
   };
 
   const generateChallenge = () => {
@@ -57,15 +60,24 @@ const App = () => {
       generateChallenge();
       setShowResult(false);
     } else {
-      alert(`Juego terminado! Puntuación final: ${points}/5`);
-      setGameStarted(false);
+      setShowResult(false);
+      setJuegoTerminado(true);
     }
+  };
+
+  const resetearJuego=()=>{
+    setJuegoTerminado(false);
+    setPoints(0);
+    setRound(1);
+    console.log(points);
   };
 
   return (
     <div>
       {!gameStarted ? (
         <PantallaInicio startGame={startGame} /> // Pasar la función correctamente
+      ) : juegoTerminado ? (
+        <PantallaFinal points={points} resetearJuego={resetearJuego} />
       ) : showResult ? (
         <PantallaResultado isCorrect={isCorrect} nextRound={nextRound} />
       ) : (
