@@ -37,6 +37,11 @@ const App = () => {
   };
 
   const verifyAnswer = (userAnswer) => {
+
+    if (userAnswer === '') { // Verifica si la respuesta del usuario esta vacia
+      return; // Sale de la funcion si no hay respuesta
+    }
+
     if (parseInt(userAnswer) === currentChallenge.correctAnswer) {
       setPoints(points + 1);
       setIsCorrect(true);
@@ -47,7 +52,7 @@ const App = () => {
   };
 
   const nextRound = () => {
-    if (round < 5) {
+    if (round < 6) {
       setRound(round + 1);
       generateChallenge();
       setShowResult(false);

@@ -6,12 +6,12 @@ const PantallaResultado = ({ isCorrect, nextRound }) => (
   <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
     <Card className="text-center" style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>{isCorrect ? "¡Correcto!" : "¡Incorrecto!"}</Card.Title>
+        <Card.Title as='h4'>{isCorrect ? "¡Correcto!" : "¡Incorrecto!"}</Card.Title>
+        <br />
         <Button variant="success" onClick={nextRound}> Siguiente desafío</Button>
       </Card.Body>
     </Card>
-  </div> 
-
+  </div>
 );
 
 export default PantallaResultado;
