@@ -1,8 +1,8 @@
-import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 
-const PantallaResultado = ({ isCorrect, nextRound }) => (
+const PantallaResultado = ({ isCorrect, nextRound }) => {
+  return (
   <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
     <Card className="text-center" style={{ width: '18rem' }}>
       <Card.Body>
@@ -11,7 +11,7 @@ const PantallaResultado = ({ isCorrect, nextRound }) => (
       </Card.Body>
     </Card>
   </div> 
-
-);
+  );
+};
 
 export default PantallaResultado;
